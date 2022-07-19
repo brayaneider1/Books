@@ -18,7 +18,7 @@ Future<void> showMyDialog(
               Container(
                 height: 100,
                 decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: NetworkImage(
                           'https://cdn.pixabay.com/photo/2016/02/17/15/37/laptop-1205256_960_720.jpg'),
                       fit: BoxFit.cover,
@@ -26,28 +26,28 @@ Future<void> showMyDialog(
                     borderRadius: BorderRadius.circular(15)),
               ),
               Text(
-                'Name: ${Name ?? ''}',
+                'Name: ${Name}',
                 style: styled,
                 textAlign: TextAlign.left,
               ),
               Text(
-                'LastName: ${LastName ?? ''}',
+                'LastName: ${LastName}',
                 style: styled,
               ),
               Text(
-                'Birthday: ${Birthday.toString().substring(0, 10) ?? ''}',
+                'Birthday: ${Birthday!.toString().substring(0, 10)}',
                 style: styled,
               ),
               Text(
-                'Age: ${Age.toString() ?? ''}',
+                'Age: ${Age.toString()}',
                 style: styled,
               ),
               Text(
-                'Email: ${email.toString() ?? ''}',
+                'Email: ${email.toString()}',
                 style: styled,
               ),
               Text(
-                'Phone: ${phone.toString() ?? ''}',
+                'Phone: ${phone.toString()}',
                 style: styled,
               ),
             ],

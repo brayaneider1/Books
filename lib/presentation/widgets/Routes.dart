@@ -9,7 +9,7 @@ class Routes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> ListPages = [const ListBooks(), UserPage(), const ListUsers()];
+    List<Widget> ListPages = [const ListBooks(), UserPage(), ProfilePage()];
 
     return ListPages[index];
   }

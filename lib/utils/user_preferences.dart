@@ -1,12 +1,16 @@
 import 'dart:convert';
 
+import 'package:books/domain/models/UserInfo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserSimplePreferences {
+
+
   static late SharedPreferences _preferences;
 
   static const _keyUsername = 'username';
   static const _keyBirthday = 'birthday';
+  String username = 'birthday';
 
   Future init() async => _preferences = await SharedPreferences.getInstance();
 

@@ -89,8 +89,8 @@ class _ListBooksState extends State<ListBooks> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "$ListB",
-          style: TextStyle(color: Color.fromARGB(255, 39, 38, 38)),
+          "Booky ",
+          style: TextStyle(color: Color.fromARGB(255, 39, 38, 38),fontWeight: FontWeight.bold),textAlign: TextAlign.start,
         ),
         actions: <Widget>[
           Padding(
@@ -111,32 +111,12 @@ class _ListBooksState extends State<ListBooks> {
          const SizedBox(height: 10,)
         ],
       ),
-/*       bottomNavigationBar: _buildBottomNavigator(),
- */
     );
   }
 }
 
 
-/*   void _handleNavigationChange(int index) {
-    setState(() {
-      switch (index) {
-        case 0:
-          _child = HomeContent();
-          break;
-        case 1:
-          _child = AccountContent();
-          break;
-        case 2:
-          _child = SettingsContent();
-          break;
-      }
-      _child = AnimatedSwitcher(
-        switchInCurve: Curves.easeOut,
-        switchOutCurve: Curves.easeIn,
-        duration: Duration(milliseconds: 500),
-        child: _child,
-      );
-    });
-  }
-} */
+
+
+
+

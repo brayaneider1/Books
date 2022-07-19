@@ -16,8 +16,6 @@ class BookItem extends StatelessWidget {
             context: context,
             builder: (context) => BookDetail(book));
       },
-      /* (() => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => BookDetail(book)))), */
       child: Container(
         height: book.height as double,
         decoration: BoxDecoration(
