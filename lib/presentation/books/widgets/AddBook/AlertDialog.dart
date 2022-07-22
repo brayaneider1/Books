@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 Future<void> showMyDialog(
     context, Name, LastName, Birthday, Age, email, phone) async {
   const styled = TextStyle(
-      fontSize: 18, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic);
+      fontSize: 18, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // user must tap button!
@@ -49,6 +49,13 @@ Future<void> showMyDialog(
               Text(
                 'Phone: ${phone.toString()}',
                 style: styled,
+              ),
+              SizedBox(height: 15,),
+
+               Text(
+                'Please go to profile page',
+                style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20),
+                textAlign: TextAlign.left,
               ),
             ],
           ),

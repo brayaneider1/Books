@@ -1,4 +1,4 @@
-import 'package:books/domain/models/book.dart';
+import 'package:books/domain/models/book2.dart';
 import 'package:books/presentation/books/DetailBook.dart';
 import 'package:books/presentation/books/widgets/Detail.dart';
 import 'package:flutter/material.dart';
@@ -9,24 +9,27 @@ class BookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-            isScrollControlled: true,
-            context: context,
-            builder: (context) => BookDetail(book));
-      },
-      /* (() => Navigator.of(context)
+    return book.isbn == null
+        ? Container()
+        : GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) => BookDetail(book));
+            },
+            /* (() => Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => BookDetail(book)))), */
-      child: Container(
-        height: book.height as double,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(book.imgUrl),
-              fit: BoxFit.cover,
+            child: Container(
+              height: 200,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        "https://covers.openlibrary.org/b/isbn/${book.isbn![0]}.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(15)),
             ),
-            borderRadius: BorderRadius.circular(15)),
-      ),
-    );
+          );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:books/domain/models/book.dart';
+import 'package:books/domain/models/book2.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -14,12 +14,12 @@ class Detail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            book.type.toUpperCase(),
+            book.authorName![0].toUpperCase(),
             style: const TextStyle(color: Color.fromARGB(255, 255, 152, 7)),
           ),
           const SizedBox(height: 10),
           Text(
-            book.name,
+            book!.title.toString(),
             style: const TextStyle(
                 fontSize: 24, color: Colors.black87, height: 1.2),
           ),
@@ -32,12 +32,12 @@ class Detail extends StatelessWidget {
                     text: 'Published from ',
                     style: TextStyle(color: Colors.grey)),
                 TextSpan(
-                    text: book.publisher,
+                    text: book.firstPublishYear.toString(),
                     style: const TextStyle(
                         color: Colors.black87, fontWeight: FontWeight.w500)),
               ])),
               Text(
-                DateFormat.yMMMMd().format(book.date),
+                book.publishDate != null ? book.publishDate![0] : 'dd-mm-yy',
                 style: const TextStyle(color: Colors.grey),
               )
             ],

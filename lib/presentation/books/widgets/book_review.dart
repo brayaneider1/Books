@@ -1,4 +1,4 @@
-import 'package:books/domain/models/book.dart';
+import 'package:books/domain/models/book2.dart';
 import 'package:flutter/material.dart';
 
 class BookReview extends StatelessWidget {
@@ -14,15 +14,26 @@ class BookReview extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text(
-                "${book.score}",
-                style:
-                    const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.only(right: 13.0),
+                  child: Text(
+                    book.subjectFacet != null
+                        ? book.subjectFacet![0].toString()
+                        : "Lorem ipsum",
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    softWrap: false,
+                    style: const TextStyle(
+                        fontSize: 26,
+                        color: Colors.amber,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
               const SizedBox(
                 width: 10,
               ),
-              _buildStart(),
             ],
           ),
           const SizedBox(
@@ -30,7 +41,9 @@ class BookReview extends StatelessWidget {
           ),
           Text.rich(TextSpan(children: [
             TextSpan(
-                text: book.description,
+                text: book.firstSentence != null
+                    ? book.firstSentence![0].toString()
+                    : "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                 style: const TextStyle(
                     color: Colors.black87, fontWeight: FontWeight.w500)),
           ])),
@@ -38,18 +51,4 @@ class BookReview extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget _buildStart() {
-  final List<Color> color = [
-    Colors.amber,
-    Colors.amber,
-    Colors.amber,
-    Colors.amber,
-    Colors.grey,
-  ];
-
-  return Row(
-    children: color.map((e) => Icon(Icons.star, size: 25, color: e)).toList(),
-  );
 }

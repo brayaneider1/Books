@@ -4,8 +4,6 @@ import 'package:books/domain/models/UserInfo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserSimplePreferences {
-
-
   static late SharedPreferences _preferences;
 
   static const _keyUsername = 'username';
@@ -51,4 +49,11 @@ class UserSimplePreferences {
 
     return birthday == null ? null : DateTime.tryParse(birthday);
   }
+
+  static Future setSearchValue(
+    String search,
+  ) async =>
+      await _preferences.setString('search', search);
+
+  static getSearch() => _preferences.getString('search');
 }

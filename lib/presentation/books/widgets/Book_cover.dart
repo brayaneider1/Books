@@ -1,4 +1,4 @@
-import 'package:books/domain/models/book.dart';
+import 'package:books/domain/models/book2.dart';
 import 'package:flutter/material.dart';
 
 class BookCover extends StatelessWidget {
@@ -28,7 +28,7 @@ class BookCover extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(book.imgUrl),
+                    image: NetworkImage("https://covers.openlibrary.org/b/isbn/${book.isbn![0]}.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),

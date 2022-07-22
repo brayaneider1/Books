@@ -1,4 +1,14 @@
 class Book {
+
+  
+  String? title;
+  int? firstPublishYear;
+  List<dynamic>? publishDate;
+  List<dynamic>? isbn;
+  List<dynamic>? authorName;
+  List<dynamic>? firstSentence;
+  List<dynamic>? subjectFacet;
+
   Book({
     required this.title,
     required this.firstPublishYear,
@@ -9,23 +19,19 @@ class Book {
     required this.subjectFacet,
   });
 
-  String title;
-  String firstPublishYear;
-  List<String> publishDate;
-  List<String> isbn;
-  List<String> authorName;
-  List<String> firstSentence;
-  List<String> subjectFacet;
 
   static Book fromJson(Map<String, dynamic> json) {
     return Book(
       title: json['title'],
-      firstPublishYear: json['firstPublishYear'],
-      publishDate: json['publishDate'],
+      firstPublishYear: json['first_publish_year'],
+      publishDate: json['publish_date'],
       isbn: json['isbn'],
-      authorName: json['authorName'],
-      firstSentence: json['firstSentence'],
-      subjectFacet: json['subjectFacet'],
+      authorName: json['author_name'],
+      firstSentence: json['first_sentence'],
+      subjectFacet: json['subject_facet'],
     );
   }
+
+  Map<String, dynamic> toJson() =>
+      {'title': title, 'firstPublishYear': firstPublishYear};
 }

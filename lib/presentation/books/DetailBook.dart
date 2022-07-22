@@ -1,10 +1,8 @@
 import 'package:books/presentation/books/widgets/Book_cover.dart';
 import 'package:books/presentation/books/widgets/Detail.dart';
 import 'package:books/presentation/books/widgets/book_review.dart';
-import 'package:books/utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
-
-import '../../domain/models/book.dart';
+import 'package:books/domain/models/book2.dart';
 
 class BookDetail extends StatelessWidget {
   final Book book;
